@@ -1,10 +1,7 @@
 import { StyleSheet, View, Text } from "react-native"
 import { Image } from "expo-image"
 
-export default function CardUser(props){
-
-    const {avatar, name, email} = props
-
+export default function CardUser({avatar, name, email}){
     return (
         <View style={styles.container}>
             <Image 
