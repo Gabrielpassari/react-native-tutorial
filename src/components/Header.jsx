@@ -1,9 +1,10 @@
 import {View, Text, StyleSheet} from 'react-native'
+import FontAwesome from '@expo/vector-icons/FontAwesome'
 
 export default function Header(){
     return (
         <View style={styles.container}>
-            <View style={styles.logo}></View>
+            <FontAwesome style={styles.logo} name="users" size={26} color="#e7612b" />
             <Text style={styles.logotipo}>Logo</Text>
         </View>
     )
@@ -21,10 +22,6 @@ const styles = StyleSheet.create({ // CSS in JS
         //justifyContent: "center",
     },
     logo:{
-        backgroundColor: "#FFF",
-        borderRadius: 15, 
-        width: 30,
-        height: 30,
         marginRight: 14
     },
     logotipo: {
