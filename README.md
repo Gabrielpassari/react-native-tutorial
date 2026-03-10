@@ -11,6 +11,7 @@
 - O estilo CSS in JS no React Native é igual ao CSS Web? Tenho todas as propriedades?
 - Em quais pacotes encontro um componente de Imagem? Qual melhor para usarmos atualmente?
 - O que são propriedades de componentes?
+- O que são Hooks?
 
 Extra
 
