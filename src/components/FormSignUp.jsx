@@ -1,15 +1,22 @@
-import { View, Text, StyleSheet, Button } from 'react-native'
-import { TextInput } from 'react-native-web'
+import { View, Text, StyleSheet, Button, TextInput } from 'react-native'
 import { useState } from 'react'
 
 export default function FormSignUp() {
 
-  const [nome, setNome] = useState("")
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [senha, setSenha] = useState("")
+  const [pass, setPass] = useState("")
+  const [avatar, setAvatar] = useState("")
 
-  const handleSubmit = () => {
-    console.log({nome, vemail, senha})
+  const handleSubmit = async () => {
+    console.log({name, email, pass, avatar})
+    const result = await fetch("http://localhost:3000/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({name, email, pass, avatar})
+    })
   }
 
   return (
@@ -17,23 +24,29 @@ export default function FormSignUp() {
       <Text style={styles.title}>Cadastro</Text>
       <View style={styles.form}>
         <TextInput 
-            style={styles.inputs} 
-            placeholder="Nome"
-            value={nome}
-            onChangeText={setNome}
+          style={styles.inputs} 
+          placeholder="Nome"
+          value={name}
+          onChangeText={setName}
         />
         <TextInput 
-            style={styles.inputs} 
-            placeholder="Email"
-            value={email}
-            onChangeText={setEmail}
+          style={styles.inputs} 
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
         />
         <TextInput 
-            style={styles.inputs} 
-            placeholder="Senha" 
-            secureTextEntry
-            value={senha}
-            onChangeText={setSenha}
+          style={styles.inputs} 
+          placeholder="Senha" 
+          secureTextEntry
+          value={pass}
+          onChangeText={setPass}
+        />
+        <TextInput 
+          style={styles.inputs} 
+          placeholder="Avatar (URL)"
+          value={avatar}
+          onChangeText={setAvatar}
         />
         <Button title="Cadastrar" onPress={handleSubmit} />
       </View>
@@ -58,7 +71,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     padding: 8
   },
-    title: {
+  title: {
     fontSize: 18,
     fontWeight: "700",
     marginBottom: 20
