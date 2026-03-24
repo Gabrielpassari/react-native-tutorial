@@ -11,7 +11,10 @@
 - O estilo CSS in JS no React Native é igual ao CSS Web? Tenho todas as propriedades?
 - Em quais pacotes encontro um componente de Imagem? Qual melhor para usarmos atualmente?
 - O que são propriedades de componentes?
-- O que são Hooks? Funções especiais do React, só podem ser usadas nas funções especiais do React
+- O que são Hooks? Funções especiais do React, só podem ser usadas nas funções especiais do React. Os principais fazem partes do Core. Todos começam com "use" (useState e useEffect)
+- Pra que serve o useState e como funciona?
+- Dentro do react qual a diferença entre estado e variável normal?
+- Pra que serve o como funciona o useEffect? Gatilho que é disparado na primeira vez e algumas dependências são alteradas.
 
 Extra
 
